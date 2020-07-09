@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "740795955332",
+    "firebase_url": "https://handoko-flix-app.firebaseio.com",
+    "project_id": "handoko-flix-app",
+    "storage_bucket": "handoko-flix-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740795955332:android:0a3741dd2e74f533326ad1",
+        "android_client_info": {
+          "package_name": "com.example.handoko_flix_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740795955332-6dc2k4lj5t6ge7mveb1har7rr8173oie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB05322UFOUp3OHSn9PjmomfzSMUiAhUJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740795955332-6dc2k4lj5t6ge7mveb1har7rr8173oie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
