@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await DotEnv().load('.env');
   runApp(MyApp());
 }
 
@@ -98,7 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times: \n\n' +
+                  'This Your API KEY: ' +
+                  DotEnv().env['TMDB_API_KEY'],
             ),
             Text(
               '$_counter',
