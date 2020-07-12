@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
                   child: Text("SignUp"),
@@ -25,6 +26,21 @@ class MyApp extends StatelessWidget {
                         "Handoko",
                         ["Action", "Horor", "Music", "Drama"],
                         "Bahasa");
+
+                    if (result.user == null) {
+                      print(result.message);
+                    } else {
+                      print(result.user.toString());
+                    }
+                  }),
+              RaisedButton(
+                  child: Text("SignIn"),
+                  onPressed: () async {
+                    // Memanggil Auth services untuk Sign In
+                    SignInSignUpResult result = await AuthServices.signIn(
+                      "siswo.handoko@gmail.com",
+                      "developer",
+                    );
 
                     if (result.user == null) {
                       print(result.message);
