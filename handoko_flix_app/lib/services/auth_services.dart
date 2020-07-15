@@ -44,6 +44,9 @@ class AuthServices {
   static Future<void> signOut() async {
     await _auth.signOut();
   }
+
+  //SERVICE UNTUK MENDETECT IS LOGIN
+  static Stream<FirebaseUser> get userStream => _auth.onAuthStateChanged;
 }
 
 class SignInSignUpResult {
