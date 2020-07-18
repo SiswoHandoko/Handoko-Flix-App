@@ -6,9 +6,22 @@ class Wrapper extends StatelessWidget {
     //mendapatkan status firebase user
     FirebaseUser firebaseUser = Provider.of<FirebaseUser>(context);
     if (firebaseUser == null) {
-      return SignInPage();
+      //Untuk Handle Page Ter Load 2 kali ketika ada 2 kali balikan dr Firebase auth
+      if (!(prevPageEvent is GoToSplashPage)) {
+        prevPageEvent = GoToSplashPage();
+        context.bloc<PageBloc>().add(prevPageEvent);
+      }
     } else {
-      return MainPage();
+      if (!(prevPageEvent is GoToMainPage)) {
+        prevPageEvent = GoToMainPage();
+        context.bloc<PageBloc>().add(prevPageEvent);
+      }
     }
+
+    //Pengecekan Kondisi untuk load page
+    return BlocBuilder<PageBloc, PageState>(
+        builder: (_, pageState) => (pageState is OnSplashPage)
+            ? SplashPage()
+            : (pageState is OnLoginPage) ? SignInPage() : MainPage());
   }
 }
